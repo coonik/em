@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>a xin lỗi</title>
+
+    <!-- Bootstrap 4 -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- Add your CSS file here -->
+    <!-- <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?fbclid=IwAR3lXt98Ytj_YnZNE04RxomfDI-CptwBxFAbSef5yqJ5Om4MC1IVq2m597o">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       owl carousel -->
+    <style>
+        body{
+            /* width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative; */
+            /* background-image: linear-gradient(to left top, #edf461, #61ed94, #00d8d6, #00b7f8, #628de3); */
+            /* background: rgba(3, 190, 252, 1); */
+            background-image: radial-gradient(circle, #0d3b43, #005268, #006891, #247cbc, #628de3);
+            /* background-repeat: no-repeat; */
+            /* background-size: 100% 100%; */
+        }
+
+        img{
+            width: 42%;
+            height: 30%;
+             position: absolute;
+             transition: 1s all;
+        }
+
+        img:nth-child(1){
+            top: 0;
+            left: 0;
+            animation: mot 4s linear forwards;
+        }
+        img:nth-child(2){
+             top: 0;
+            right: 0; 
+            animation: hai 4s linear forwards;
+
+        }
+        img:nth-child(3){
+            bottom: 0;
+            left: 0;
+            animation: ba 4s linear forwards;
+
+        }
+        img:nth-child(4){
+            bottom: 0;
+            right: 0;
+            animation: bon 4s linear forwards;
+
+        }
+
+        @keyframes mot {
+            50%{
+                top: 20%;
+                left: 8%;               
+            }
+            80%{
+                top: 25%;
+                left: 13%;
+            }
+            100%{
+                top: 20%;
+                left: 8%;
+            }
+        }
+        @keyframes hai {
+            50%{
+                top: 20%;
+                right: 8%;               
+            }
+            80%{
+                top: 25%;
+                right: 13%;
+            }
+            100%{
+                top: 20%;
+                right: 8%;
+            }            
+        }
+        @keyframes ba {
+            50%{
+                bottom: 20%;
+                left: 8%;               
+            }
+            80%{
+                bottom: 25%;
+                left: 13%;
+            }
+            100%{
+                bottom: 20%;
+                left: 8%;
+            }             
+        }
+        @keyframes bon {
+            50%{
+                bottom: 20%;
+                right: 8%;               
+            }
+            80%{
+                bottom: 25%;
+                right: 13%;
+            }
+            100%{
+                bottom: 20%;
+                right: 8%;
+            }             
+        }
+
+        button{
+            background: #247cbc;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            padding: 8px;
+            font-weight: 600;
+            opacity: 1;
+            transition: 200ms all;
+            outline: none;
+            cursor: pointer;
+        }
+        div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        audio{
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+        <img src="/1.jpg" alt="1">
+        <img src="/2.jpg" alt="2">
+        <img src="/3.jpg" alt="3">
+        <img src="/4.jpg" alt="4">
+            <audio id="nhac" controls >
+                    <source src="danhchoTuyen.mp3" type="audio/mpeg">
+                  Trình duyệt của bạn không hỗ trợ HTML5
+                  </audio>
+            <div>
+                <p style="color: Yellow">Cho a xin lỗi nhé!</p>
+                <button id="btn"> ờ (click me)</button>
+            </div>
+        
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <!-- Script for Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script> 
+    <script>
+        var audio = document.querySelector('audio');
+        // var tamp = audio.cloneNode(true);
+
+        // audio.remove();
+        setTimeout(function(){
+            var images = document.querySelectorAll('img');
+            for(var i = 0 ; i < images.length; i ++){
+                images[i].style.opacity = '0';
+            }
+            var div = document.querySelector('div');
+            div.style.opacity = '1';
+
+        }, 4000)
+        document.querySelector('button').addEventListener('click', function(event){
+            document.querySelector('div').style.opacity = '0';
+            audio.play();
+        })
+    </script>
+    </body>
+</html>
