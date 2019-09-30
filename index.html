@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/ico" href="em.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>a xin lỗi</title>
-
+<!-- 200 dòng code vcl -_- mỏi -->
     <!-- Bootstrap 4 -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
@@ -140,22 +141,42 @@
         audio{
             opacity: 0;
         }
+        .para{
+            transition: 500ms all;
+            opacity: 0;
+            color:  yellow;
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            word-wrap: break-word;
+        }
     </style>
 </head>
 
 <body>
+    
         <img src="1.jpg" alt="1">
         <img src="2.jpg" alt="2">
         <img src="3.jpg" alt="3">
         <img src="4.jpg" alt="4">
+        <p class="para">
+                a hy vọng e đang thấy dòng chữ này.. và nghe bài nhạc nền a đặt..
+                hi.. e đang đọc 1 dòng tin rất ngắn đúng ko.. thật ra cái mà e đang nhìn thấy nó được tạo thành bởi hơn 7000 ký tự đó :v.. 
+                nhưng phần e thấy rất ngắn bởi phần lớn nó nằm trong code rồi.. e đoán xem răng a lại nhắc tới cx ký tự nè.. ko biết e đoán
+                là chi và e đoán chưa.. để a trl lun hỉ :)).. a nhắc tới cx ni vì nó cũng như a.. những tin nhắn xin lỗi.. e cũng thấy nó rất ngắn.. nhưng đó cũng chỉ là "phần e thấy"
+                .. nãy a nói "nhưng phần e thấy rất ngắn bởi phần lớn nó nằm trong code rồi".. thì ni cũng rứa.. phần rất lớn.. nó nằm ở trong TIM a nè.. a xin lỗi !!
+        </p>
             <audio id="nhac" controls >
                     <source src="danhchoTuyen.mp3" type="audio/mpeg">
-                  Trình duyệt của bạn không hỗ trợ HTML5
+                  Nếu hiện ni thì e dùng laptop xem nhá =))
                   </audio>
             <div>
                 <p style="color: Yellow">Cho a xin lỗi nhé!</p>
                 <button id="btn"> ờ (click me)</button>
             </div>
+
         
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -173,6 +194,12 @@
         // var tamp = audio.cloneNode(true);
 
         // audio.remove();
+
+        
+
+// git add .
+// git commit -m ""
+// git push -u origin master
         setTimeout(function(){
             var images = document.querySelectorAll('img');
             for(var i = 0 ; i < images.length; i ++){
@@ -185,6 +212,7 @@
         document.querySelector('button').addEventListener('click', function(event){
             document.querySelector('div').style.opacity = '0';
             audio.play();
+            document.querySelector('.para').style.opacity = '1';
         })
     </script>
     </body>
