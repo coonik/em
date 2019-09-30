@@ -152,6 +152,17 @@
             transform: translate(-50%, -50%);
             word-wrap: break-word;
         }
+        .para2{
+            transition: 500ms all;
+            opacity: 0;
+            color:  yellow;
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            word-wrap: break-word;
+        }
     </style>
 </head>
 
@@ -166,8 +177,12 @@
                 hi.. e đang đọc 1 dòng tin rất ngắn đúng ko.. thật ra cái mà e đang nhìn thấy nó được tạo thành bởi hơn 7000 ký tự đó :v.. 
                 nhưng phần e thấy rất ngắn bởi phần lớn nó nằm trong code rồi.. e đoán xem răng a lại nhắc tới cx ký tự nè.. ko biết e đoán
                 là chi và e đoán chưa.. để a trl lun hỉ :)).. a nhắc tới cx ni vì nó cũng như a.. những tin nhắn xin lỗi.. e cũng thấy nó rất ngắn.. nhưng đó cũng chỉ là "phần e thấy"
-                .. nãy a nói "nhưng phần e thấy rất ngắn bởi phần lớn nó nằm trong code rồi".. thì ni cũng rứa.. phần rất lớn.. nó nằm ở trong TIM a nè.. a xin lỗi !!
+                .. nãy a nói "nhưng phần e thấy rất ngắn bởi phần lớn nó nằm trong code rồi".. thì ni cũng rứa.. phần rất lớn.. nó nằm ở trong TIM a nè.. a xin lỗi !!..
+                vì sao xin lỗi hoài à.. vì làm e buồn là a đã có lỗi rồi.. và vì e còn buồn nên a còn xin lỗi.. xin lỗi e.. tới đây là hết rồi đó.. e tắt đi.. a rất vui khi e đọc đến đây.
         </p>
+        <p class="para2">
+            a ko hy vọng e nhìn thấy dòng này.. a xin lỗi !!.. a nói rứa thôi.. e tắt đi..
+    </p>
             <audio id="nhac" controls >
                     <source src="danhchoTuyen.mp3" type="audio/mpeg">
                   Nếu hiện ni thì e dùng laptop xem nhá =))
@@ -175,6 +190,7 @@
             <div>
                 <p style="color: Yellow">Cho a xin lỗi nhé!</p>
                 <button id="btn"> ờ (click me)</button>
+                <button id="btn2"> ko (click me)</button>
             </div>
 
         
@@ -209,10 +225,15 @@
             div.style.opacity = '1';
 
         }, 4000)
-        document.querySelector('button').addEventListener('click', function(event){
+        document.getElementById('btn').addEventListener('click', function(event){
             document.querySelector('div').style.opacity = '0';
             audio.play();
             document.querySelector('.para').style.opacity = '1';
+        })
+        document.getElementById('btn2').addEventListener('click', function(event){
+            document.querySelector('div').style.opacity = '0';
+            // audio.play();
+            document.querySelector('.para2').style.opacity = '1';
         })
     </script>
     </body>
